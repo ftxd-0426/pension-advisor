@@ -15,7 +15,7 @@ advisor = PensionAdvisorCore()
 @app.route('/')
 def index():
     """显示主页面"""
-    return render_template('index.html')
+    return render_template('../index.html')
 
 @app.route('/health')
 def health_check():
@@ -159,4 +159,5 @@ def generate_simple_plan():
 if __name__ == '__main__':
     # 获取环境变量中的端口，如果没有则使用5000
     port = int(os.environ.get('PORT', 5000))
+
     app.run(host='0.0.0.0', port=port, debug=False)
